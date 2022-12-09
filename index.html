@@ -40,22 +40,33 @@
         position: absolute;
         display: block;
         width: 100%;
-        height: 3px;
+        height: 2px;
         bottom: 0;
         left: 0;
         background-color: #000;
         transform: scaleX(0);
         transform-origin: top left;
-        transition: transform 0.3s ease;
+        transition: transform 0.5s ease-in-out;
+      }
+      .title:hover .logo {
+        animation: rotation 0.5s ease-in-out;
       }
       .title:hover .name::before {
         transform: scaleX(1);
+      }
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
   <body>
     <div class="title">
-      <img src="favicon.svg" style="width: 1em; height: 1em" />
+      <img class="logo" src="favicon.svg" style="width: 1em; height: 1em" />
       <span class="name">Selenops</span>
     </div>
   </body>
